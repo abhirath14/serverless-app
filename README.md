@@ -3,10 +3,12 @@ Instructions for running the app
 
 
 To run the app on local server
+
 npm start
 
 
 To deploy the app on aws-lambda
+
 serverless deploy
 
 The app has a model User on which basic CRUD operations are performed. 
