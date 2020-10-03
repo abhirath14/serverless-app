@@ -3,11 +3,10 @@ const app = express();
 const bodyParser = require('body-parser');
 const port = process.env.PORT || 8000;
 const baseUrl = `http://localhost:${port}`;
-
-app.use(bodyParser.urlencoded({ extended: true }));
-app.get('/', (req, res) => {
-   res.status(200).send('hello world!');
-});
+const generalRoutes = require('./routes/index.js');
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
+app.use("", generalRoutes.router);
 
 // Server
 module.exports = app;
