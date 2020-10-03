@@ -41,7 +41,7 @@ exports.addUser = async (req, res, next) => {
   var typeOfUser = req.body.typeOfUser;
   const errors = validationResult(req);
 
-  var existingUser = await User.findOne({nickName: nickName});
+  var existingUser = await User.findOne({$or: [{email: email}, {nickName: nickName}]});
   if (existingUser) {
     res.json({message: "User already exists"});
     res.status(200);
