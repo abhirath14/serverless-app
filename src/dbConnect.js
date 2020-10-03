@@ -12,22 +12,5 @@ var mongoFunction = (app) => {
   }).catch((err) => {
     console.log(err)
   });
-  // mongoClient.connect(uri).then(
-  //   client => {
-  //     _db = client.db();
-  //     console.log("Connected");
-  //   }
-  // ).catch(err => {
-  //   console.log(err);
-  // });
 }
-
-var getDb = () => {
-  if (_db) {
-    return _db;
-  } else {
-    return "Not connected";
-  }
-}
-exports.getDb = getDb;
 exports.mongoFunction = mongoFunction;
